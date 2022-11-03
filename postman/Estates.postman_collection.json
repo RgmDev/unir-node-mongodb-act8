@@ -1,0 +1,102 @@
+{
+	"info": {
+		"_postman_id": "9523ed23-05da-4a32-af49-da9bdea57c84",
+		"name": "Estates",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "8183256"
+	},
+	"item": [
+		{
+			"name": "Read estates",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/api/estate",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"estate"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create state",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"flat\": 1,\r\n    \"letter\": \"A\",\r\n    \"extension\": 65,\r\n    \"rooms\": 2,\r\n    \"rent\": true,\r\n    \"owner_name\": \"Rubén González Martín\",\r\n    \"owner_email\": \"ruben@mail.com\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/api/estate",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"estate"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update state",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"rent\": true\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/api/estate/636415ad8a926730beda5320",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"estate",
+						"636415ad8a926730beda5320"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete state",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/api/estate/636415ad8a926730beda5320",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"estate",
+						"636415ad8a926730beda5320"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
