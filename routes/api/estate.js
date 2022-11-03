@@ -21,7 +21,13 @@ router.post('/', async (req, res) => {
 });
 
 router.put('/:estateId', async (req, res) => {
-    res.send('PUT estate');
+  try {
+    const { estateId } = req.params;
+    const estate = await Estate.findByIdAndUpdate(estateId, req.body, { new: true });
+    res.json(estate);
+  } catch (err) {
+    res.json({ error: err.message })
+  }
 });
 
 router.delete('/:estateId', (req, res) => { 
