@@ -3,11 +3,16 @@ const router = require('express').Router();
 const Estate = require('../../models/estate.model');
 
 router.get('/', async (req, res) => {
-    res.send('GET estate');
+  res.send('GET estate');
 });
 
 router.post('/', async (req, res) => {
-    res.send('POST estate');
+  try {
+    const estate = await Estate.create(req.body);
+    res.json(estate);
+  } catch (err) {
+    res.json({ error: err.message });
+  }
 });
 
 router.put('/:estateId', async (req, res) => {
