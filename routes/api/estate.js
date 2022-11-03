@@ -30,8 +30,14 @@ router.put('/:estateId', async (req, res) => {
   }
 });
 
-router.delete('/:estateId', (req, res) => { 
-    res.send('DELETE estate');
+router.delete('/:estateId', async (req, res) => { 
+  try {
+    const { estateId } = req.params;
+    const estate = await Estate.findByIdAndDelete(estateId);
+    res.json(estate);
+  } catch (err) {
+    res.json({ error: err.message })
+  }
 });
 
 module.exports = router;
