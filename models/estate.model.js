@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-const comensalSchema = new Schema({
+const estateSchema = new Schema({
     flat: Number,
     letter: String,
     extension: Number,
